@@ -2,7 +2,7 @@
   "name": "e-commerce-cloth",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://superman566.github.io/monsters-rolodex-2022/",
+  "homepage": "https://superman566.github.io/e-commerce-cloth/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
