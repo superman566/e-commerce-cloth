@@ -1,3 +1,4 @@
+import SignUpForm from "../../components/sign-up-form/sign-up-form.component";
 import {
   signInWithGooglePopup,
   createUserDocFromAuth
@@ -9,7 +10,7 @@ const SignIn = () => {
       const { user } = await signInWithGooglePopup();
       await createUserDocFromAuth(user);
     } catch (error) {
-      console.error('Error for google Sign In', error.message);
+      console.error('Error ->', error.message);
     }
   };
 
@@ -17,6 +18,7 @@ const SignIn = () => {
   <div>
     <h1>Sign IN</h1>
     <button onClick={signInGooglePopupHandler}>Sign In google</button>
+    <SignUpForm />
   </div>
   );
 }
