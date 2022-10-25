@@ -38,8 +38,9 @@ const SignUpForm =() => {
     }
     try {
       const {user} = await createAuthUserWithEmailAndPassword(email, pwd);
-      console.log(user);
       await createUserDocFromAuth(user, { displayName });
+      alert('Sign up successfully!');
+      console.log('Sign up a user:', displayName, '->', email);
       resetFormHandler();
     } catch (error) {
       if(error.code === 'auth/weak-password') {

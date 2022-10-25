@@ -26,6 +26,8 @@ const SignInForm =() => {
     try {
       const { user } = await signInWithGooglePopup();
       await createUserDocFromAuth(user);
+      alert('Sign in successfully!');
+      console.log('Sign in with a google user');
     } catch (error) {
       console.error('Error ->', error.message);
     }
@@ -40,6 +42,8 @@ const SignInForm =() => {
     event.preventDefault();
     try {
       await siginAuthUserWithEmailAndPassword(email, pwd);
+      alert('Sign in successfully!');
+      console.log('Sign in within a user\'s email', email);
       resetFormHandler();
     } catch (error) {
       if(error.code === 'auth/wrong-password') {
