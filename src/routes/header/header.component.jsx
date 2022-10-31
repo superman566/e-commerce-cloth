@@ -1,9 +1,14 @@
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/crown.svg";
+import { signOutUser } from "../../utils/firebase/firebase.utils"; 
+import { userContext } from "../../contexts/user.context";
 import "./header.styles.scss";
 
 const Header = ()=>{
+  const { currUser } = useContext(userContext);
+  console.log('Current login in User is:', currUser);
+
   return (
     <Fragment>
       <div className="navigation">
@@ -12,7 +17,16 @@ const Header = ()=>{
         </Link>
         <div className="nav-links-container">
           <Link className="nav-link" to='/shop' > Shop</Link>
-          <Link className="nav-link" to='/auth' > SIGN IN</Link>
+          { currUser ? 
+          (
+          <span 
+            className="nav-link" 
+            onClick={signOutUser}>
+              SIGN OUT
+          </span>)
+          : 
+          (<Link className="nav-link" to='/auth' > SIGN IN</Link>)
+          }
         </div>
         
       </div>

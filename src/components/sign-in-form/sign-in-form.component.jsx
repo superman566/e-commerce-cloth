@@ -5,7 +5,6 @@ import {
   siginAuthUserWithEmailAndPassword
 } from "../../utils/firebase/firebase.utils";
 import Button from "../button/button.component";
-
 import FormInput from "../form-input/form-input.component";
 
 import "./sign-in-form.styles.scss";
@@ -21,6 +20,7 @@ const SignInForm =() => {
     email,
     pwd,
   } = formValues;
+
 
   const signInWithGoogle =async () =>{
     try {
@@ -43,7 +43,6 @@ const SignInForm =() => {
     try {
       await siginAuthUserWithEmailAndPassword(email, pwd);
       alert('Sign in successfully!');
-      console.log('Sign in within a user\'s email', email);
       resetFormHandler();
     } catch (error) {
       if(error.code === 'auth/wrong-password') {
