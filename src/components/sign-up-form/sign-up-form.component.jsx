@@ -85,7 +85,7 @@ const SignUpForm =() => {
           value={pwd}
         />
         <FormInput 
-          label="Password"
+          label="Confirm Password"
           required 
           type="password" 
           onChange={onChangeHandler} 
