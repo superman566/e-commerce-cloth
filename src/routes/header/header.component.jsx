@@ -1,8 +1,12 @@
 import { Fragment, useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
+
 import { ReactComponent as Logo } from "../../assets/crown.svg";
 import { signOutUser } from "../../utils/firebase/firebase.utils"; 
 import { userContext } from "../../contexts/user.context";
+import CartIcon from "../../components/cart-icon/cart-icon.component";
+// import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
+
 import "./header.styles.scss";
 
 const Header = ()=>{
@@ -27,8 +31,9 @@ const Header = ()=>{
           : 
           (<Link className="nav-link" to='/auth' > SIGN IN</Link>)
           }
+          <CartIcon />
         </div>
-        
+        {/* <CartDropdown /> */}
       </div>
       <Outlet />
     </Fragment>
