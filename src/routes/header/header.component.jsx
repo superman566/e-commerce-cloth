@@ -6,13 +6,16 @@ import { signOutUser } from "../../utils/firebase/firebase.utils";
 import { userContext } from "../../contexts/user.context";
 import CartIcon from "../../components/cart-icon/cart-icon.component";
 import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
+import { cartContext } from "../../contexts/cart.context";
 
 import "./header.styles.scss";
 
+
 const Header = ()=>{
   const { currUser } = useContext(userContext);
+  const { isCartOpen } = useContext(cartContext);
   console.log('Current login in User is:', currUser);
-
+ 
   return (
     <Fragment>
       <div className="navigation">
@@ -33,7 +36,7 @@ const Header = ()=>{
           }
           <CartIcon />
         </div>
-        <CartDropdown />
+        {isCartOpen && <CartDropdown />}
       </div>
       <Outlet />
     </Fragment>
