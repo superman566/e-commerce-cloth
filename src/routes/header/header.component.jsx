@@ -5,7 +5,7 @@ import { ReactComponent as Logo } from "../../assets/crown.svg";
 import { signOutUser } from "../../utils/firebase/firebase.utils"; 
 import { userContext } from "../../contexts/user.context";
 import CartIcon from "../../components/cart-icon/cart-icon.component";
-// import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
+import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
 
 import "./header.styles.scss";
 
@@ -33,7 +33,7 @@ const Header = ()=>{
           }
           <CartIcon />
         </div>
-        {/* <CartDropdown /> */}
+        <CartDropdown />
       </div>
       <Outlet />
     </Fragment>
