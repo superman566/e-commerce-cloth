@@ -1,7 +1,8 @@
 import { Fragment, useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
 
-import { ReactComponent as Logo } from "../../assets/crown.svg";
+// import { ReactComponent as Logo } from "../../assets/crown.svg";
+import { ReactComponent as Logo } from "../../logo.svg";
 import { signOutUser } from "../../utils/firebase/firebase.utils"; 
 import { userContext } from "../../contexts/user.context";
 import CartIcon from "../../components/cart-icon/cart-icon.component";
@@ -20,7 +21,7 @@ const Header = ()=>{
     <Fragment>
       <div className="navigation">
         <Link className="logo-container" to='/'>
-          <Logo className="logo" />
+          <Logo className="logo" style={{width: "50px", height: "50px"}} />
         </Link>
         <div className="nav-links-container">
           <Link className="nav-link" to='/shop' > Shop</Link>
